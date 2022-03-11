@@ -17,7 +17,7 @@ import {
   Button,
   AspectRatio,
 } from "native-base";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, View, ViewStyle, TextStyle, ImageStyle, FlexAlignType } from "react-native";
 
 // Start editing here, save and see your changes.
 export default function David() {
@@ -75,7 +75,17 @@ function ColorModeSwitch() {
   );
 }
 
-const styles = StyleSheet.create({
+interface Styles {
+    // button: ViewStyle;
+    // icon: ImageStyle;
+    // label: TextStyle;
+    heroContainer: ViewStyle,
+    heroHeaderContainer: ViewStyle,
+    heroHeaderText: TextStyle,
+  }
+
+  
+const styles = StyleSheet.create<Styles>({
     heroContainer: {
       position: "relative"
     },
@@ -85,7 +95,7 @@ const styles = StyleSheet.create({
       right: 0,
       bottom: "25%",
       position: "absolute",
-      alignItems: "start",
+      alignItems: "start" as FlexAlignType,
       justifyContent: "center",
       marginLeft: 50
     },
